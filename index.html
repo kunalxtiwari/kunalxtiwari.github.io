@@ -15,6 +15,9 @@
             <a href="#skills" class="hover:text-blue-400">Skills</a>
             <a href="#projects" class="hover:text-blue-400">Projects</a>
         </div>
+    <button id="darkModeToggle" class="p-2 bg-gray-700 hover:bg-gray-600 rounded-full text-sm">
+    🌙 Toggle Mode
+</button>
     </nav>
 
     <header class="py-20 text-center">
@@ -49,10 +52,40 @@
             </div>
         </div>
     </section>
+<section id="contact" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-6 max-w-lg">
+        <h3 class="text-3xl font-bold mb-8 text-center">Get In Touch</h3>
+        <form action="https://formspree.io/f/mdaaellz" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500" required>
+            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500" required>
+            <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500" required></textarea>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded font-bold transition">Send Message</button>
+        </form>
+    </div>
+</section>
 
     <footer class="text-center py-10 text-gray-500 border-t border-gray-800">
         <p>© 2026 | Built with Tailwind CSS</p>
     </footer>
+<script>
+    const btn = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    btn.addEventListener('click', () => {
+        // This toggles the background and text colors
+        if (body.classList.contains('bg-gray-900')) {
+            body.classList.replace('bg-gray-900', 'bg-white');
+            body.classList.replace('text-gray-100', 'text-gray-900');
+            btn.innerText = "☀️ Light Mode";
+            btn.classList.replace('bg-gray-700', 'bg-gray-200');
+        } else {
+            body.classList.replace('bg-white', 'bg-gray-900');
+            body.classList.replace('text-gray-900', 'text-gray-100');
+            btn.innerText = "🌙 Dark Mode";
+            btn.classList.replace('bg-gray-200', 'bg-gray-700');
+        }
+    });
+</script>
 
 </body>
 </html>
